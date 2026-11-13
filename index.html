@@ -2,9 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="robots" content="noindex">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#4A6B57">
+<meta name="theme-color" content="#1F5F4A">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="default">
@@ -15,87 +14,104 @@
 <title>Shore Critter Trail</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible:wght@400;700&family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=IBM+Plex+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@500&display=swap">
 <style>
-:root,:root[data-theme="dark"]{
+:root{
   color-scheme:light;
-  --paper:#F3EEE3; --surface:#FFFDF8; --surface2:#F8F3E9; --ink:#26231C; --muted:#6B6456; --line:#E0D6C3;
-  --river:#3A7D94; --river-soft:#A9CFDB; --land:#EDE3CD; --street:#FFFDF8; --park:#C7D3A2;
-  --clay:#C0693D; --sun:#E3A230; --sun-ink:#3D2800; --accent:#4A6B57; --accent-ink:#FFFFFF;
-  --locked:#DDD3C0; --sil:#B0A690; --good:#3F7A45; --bad:#B23A2E;
-  --display:"Bricolage Grotesque", "Trebuchet MS", system-ui, sans-serif;
-  --body:"Atkinson Hyperlegible", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --bg:#F5F5F0; --surface:#FFFFFF; --surface2:#F3F4EF; --ink:#16201B; --muted:#5E6A63; --line:#E2E5DE;
+  --brand:#1F5F4A; --brand-ink:#FFFFFF; --brand-soft:#E3EFE9; --sunset:#E0652F; --sunset-soft:#FCE9DF;
+  --river:#2C7DA0; --river-soft:#A9D2E3; --land:#EFE7D6; --street:#FFFFFF; --park:#C5D9A8;
+  --sun:#F2B33D; --sun-ink:#3D2800; --locked:#E7E3D8; --sil:#B7B09F; --good:#2E7D4F; --bad:#B23A2E;
+  --accent:#1F5F4A; --accent-ink:#FFFFFF; --paper:#F5F5F0;
+  --shadow:0 1px 2px rgba(22,32,27,.06),0 6px 20px rgba(22,32,27,.06);
+  --display:"Fraunces", Georgia, serif;
+  --body:"Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
   --mono:"IBM Plex Mono", ui-monospace, Menlo, monospace;
 }
 *{box-sizing:border-box}
 [hidden]{display:none!important}
-html,body{background:var(--paper)}
-body{margin:0;color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.5;padding-inline:16px;padding-block:env(safe-area-inset-top,0px) 96px}
-.wrap{max-width:1120px;margin:0 auto}
-h1,h2,h3{font-family:var(--display);line-height:1.1;margin:0;text-wrap:balance}
+html,body{background:var(--bg)}
+body{margin:0;color:var(--ink);font-family:var(--body);font-size:15.5px;line-height:1.55;padding-inline:16px;padding-block:env(safe-area-inset-top,0px) 96px;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto}
+h1,h2,h3,h4{font-family:var(--display);font-weight:700;line-height:1.12;margin:0;text-wrap:balance;letter-spacing:-.01em}
 p{margin:0}
 button{font:inherit;color:inherit;cursor:pointer}
 button:focus-visible,input:focus-visible,a:focus-visible,select:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
 .mono{font-family:var(--mono);font-size:.82em;letter-spacing:.02em}
-.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:700}
+.eyebrow{font-size:.72rem;text-transform:uppercase;letter-spacing:.12em;color:var(--muted);font-weight:600}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:18px;box-shadow:var(--shadow)}
 
-header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:18px 14px;flex-wrap:wrap}
-.brand{display:flex;align-items:center;gap:12px}
-.brand h1{font-size:1.5rem;font-weight:800;letter-spacing:-.01em}
+header.top{display:flex;align-items:center;justify-content:space-between;gap:12px;padding-block:16px 12px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand svg{flex:none}
+.brand h1{font-size:1.45rem}
 .brand small{display:block;color:var(--muted);font-size:.82rem}
-.proto{font-family:var(--mono);font-size:.7rem;background:var(--sun);color:var(--sun-ink);padding:2px 8px;border-radius:99px;vertical-align:middle;margin-left:6px}
-.userchip{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:4px 6px 4px 14px}
-.userchip b{font-size:.9rem}
-.userchip button{border:0;background:var(--surface2);border-radius:99px;padding:6px 12px;font-size:.82rem}
+.userchip{display:flex;align-items:center;gap:10px;background:var(--surface);border:1px solid var(--line);border-radius:99px;padding:4px 4px 4px 14px;box-shadow:var(--shadow);flex:none}
+.userchip b{font-size:.88rem;font-weight:600}
+.userchip button{border:0;background:var(--brand);color:#fff;border-radius:99px;padding:6px 14px;font-size:.82rem;font-weight:600}
 
-nav.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px;margin-bottom:16px}
-nav.tabs button{flex:1;border:0;background:transparent;padding:10px 8px;border-radius:10px;font-weight:700;font-size:.92rem;display:flex;gap:8px;align-items:center;justify-content:center;color:var(--muted)}
-nav.tabs button[aria-selected="true"]{background:var(--accent);color:var(--accent-ink)}
+nav.tabs{display:flex;gap:4px;background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:4px;margin-bottom:16px;box-shadow:var(--shadow)}
+nav.tabs button{flex:1;border:0;background:transparent;padding:10px 8px;border-radius:10px;font-weight:600;font-size:.92rem;display:flex;gap:8px;align-items:center;justify-content:center;color:var(--muted)}
+nav.tabs button[aria-selected="true"]{background:var(--brand);color:#fff}
 nav.tabs svg{width:18px;height:18px;flex:none}
 @media (max-width:720px){
-  nav.tabs{position:fixed;left:0;right:0;bottom:0;margin:0;border-radius:0;border-width:1px 0 0;z-index:30;padding:6px 8px calc(6px + env(safe-area-inset-bottom,0px))}
-  nav.tabs button{flex-direction:column;gap:2px;font-size:.72rem;padding:6px 4px}
+  nav.tabs{position:fixed;left:0;right:0;bottom:0;margin:0;border-radius:0;border-width:1px 0 0;z-index:30;padding:6px 6px calc(6px + env(safe-area-inset-bottom,0px));box-shadow:0 -4px 16px rgba(0,0,0,.06)}
+  nav.tabs button{flex-direction:column;gap:2px;font-size:.7rem;padding:6px 2px}
+  nav.tabs button[aria-selected="true"]{background:transparent;color:var(--brand)}
 }
 
-.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 340px;gap:16px;align-items:start}
+/* hero */
+.hero{position:relative;border-radius:22px;overflow:hidden;margin-bottom:16px;box-shadow:var(--shadow);min-height:280px;display:grid}
+.hero svg.scene{position:absolute;inset:0;width:100%;height:100%}
+.hero .in{position:relative;padding:30px;display:grid;gap:12px;align-content:end;max-width:560px}
+.hero h2{font-size:2.5rem;color:#2A1A0E}
+.hero p{color:#4A3626;font-size:1rem;max-width:44ch}
+.hero .chips{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.glass{background:rgba(255,255,255,.85);backdrop-filter:blur(6px);border-radius:99px;padding:6px 12px;font-size:.84rem;font-weight:600;color:var(--ink)}
+@media (max-width:560px){.hero{min-height:240px}.hero .in{padding:20px}.hero h2{font-size:1.85rem}}
+
+.mapgrid{display:grid;grid-template-columns:minmax(0,1fr) 360px;gap:16px;align-items:start}
 @media (max-width:900px){.mapgrid{grid-template-columns:1fr}}
-.mapcard{background:var(--surface);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.mapcard{overflow:hidden}
 .maptools{display:flex;flex-wrap:wrap;gap:8px;padding:12px;border-bottom:1px solid var(--line);align-items:center}
-.chip{border:1px solid var(--line);background:var(--surface2);border-radius:99px;padding:5px 12px;font-size:.84rem;display:inline-flex;align-items:center;gap:6px}
-.chip[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.chip{border:1px solid var(--line);background:var(--surface);border-radius:99px;padding:5px 12px;font-size:.82rem;font-weight:500;display:inline-flex;align-items:center;gap:6px}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
 .chip .dot{width:10px;height:10px;border-radius:50%;display:inline-block}
 .maptools .spacer{flex:1}
 .mapscroll{overflow-x:auto;-webkit-overflow-scrolling:touch}
 #map{display:block;width:100%;min-width:720px;height:auto;background:var(--land)}
-.mapfoot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 12px;font-size:.78rem;color:var(--muted);border-top:1px solid var(--line)}
+.mapfoot{display:flex;justify-content:space-between;gap:8px;flex-wrap:wrap;padding:8px 12px;font-size:.76rem;color:var(--muted);border-top:1px solid var(--line)}
 .pin{cursor:pointer}
 .pin:focus{outline:none}
 .pin:focus-visible .ring,.pin:hover .ring{stroke:var(--ink);stroke-width:4}
 .pin.sel .ring{stroke:var(--ink);stroke-width:5}
-.zone{fill:var(--sun);fill-opacity:.18;stroke:var(--sun);stroke-width:2.5;stroke-dasharray:7 6}
-.pin.sel .zone{fill-opacity:.32}
+.zone{fill:var(--sunset);fill-opacity:.14;stroke:var(--sunset);stroke-width:2.5;stroke-dasharray:7 6}
+.pin.sel .zone{fill-opacity:.3}
 @media (prefers-reduced-motion:no-preference){.zone{animation:breathe 3s ease-in-out infinite}}
-@keyframes breathe{50%{fill-opacity:.3}}
+@keyframes breathe{50%{fill-opacity:.28}}
 
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:18px;display:flex;flex-direction:column;gap:14px}
-.panel h2{font-size:1.45rem;font-weight:800}
+.panel{padding:20px;display:flex;flex-direction:column;gap:14px}
+.panel h2{font-size:1.5rem}
 .panel .sub{color:var(--muted);font-size:.92rem}
-.progress{height:12px;background:var(--surface2);border:1px solid var(--line);border-radius:99px;overflow:hidden}
-.progress i{display:block;height:100%;background:var(--sun);border-radius:99px;transition:width .5s}
+.progress{height:8px;background:var(--surface2);border-radius:99px;overflow:hidden}
+.progress i{display:block;height:100%;background:var(--brand);border-radius:99px;transition:width .5s}
 .row{display:flex;gap:10px;align-items:center}
-.btn{border:0;border-radius:12px;padding:12px 16px;font-weight:700;background:var(--accent);color:var(--accent-ink);display:inline-flex;align-items:center;justify-content:center;gap:8px}
-.btn.alt{background:var(--surface2);color:var(--ink);border:1px solid var(--line)}
-.btn.sm{padding:8px 12px;font-size:.88rem;border-radius:10px}
+.btn{border:0;border-radius:12px;padding:11px 16px;font-weight:600;background:var(--brand);color:#fff;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+.btn.alt{background:var(--surface);color:var(--ink);border:1px solid var(--line)}
+.btn.warm{background:var(--sunset);color:#fff}
+.btn.sm{padding:7px 12px;font-size:.86rem;border-radius:10px}
 .btn[disabled]{opacity:.5;cursor:not-allowed}
 .btns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.clue{background:var(--surface2);border-left:4px solid var(--sun);padding:12px 14px;border-radius:0 10px 10px 0;font-size:.95rem}
-.facts{display:grid;gap:6px;font-size:.88rem}
+.clue{background:var(--surface2);padding:12px 14px;border-radius:12px;font-size:.95rem}
+.clue.extra{background:var(--sunset-soft)}
+.facts{display:grid;gap:6px;font-size:.88rem;margin:0}
 .facts div{display:flex;gap:8px}
 .facts dt{color:var(--muted);min-width:92px}
 .facts dd{margin:0}
 .manual{display:flex;gap:8px}
-.manual input{flex:1;min-width:0;font-family:var(--mono);text-transform:uppercase;letter-spacing:.2em;font-size:1rem;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
+.manual input,.codein{flex:1;min-width:0;font-family:var(--mono);text-transform:uppercase;letter-spacing:.2em;font-size:1rem;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
 .err{color:var(--bad);font-size:.86rem}
+.ok{color:var(--good);font-size:.86rem}
 .hint{font-size:.8rem;color:var(--muted)}
 .scanbox{aspect-ratio:1;max-width:220px;width:100%;margin:0 auto;border-radius:18px;background:#0F1615;position:relative;overflow:hidden;display:grid;place-items:center;color:#DDE;font-size:.85rem}
 .scanbox::before{content:"";position:absolute;inset:18%;border:3px solid var(--sun);border-radius:12px}
@@ -104,60 +120,104 @@ nav.tabs svg{width:18px;height:18px;flex:none}
 @keyframes sweep{to{top:80%}}
 .scanbox span{position:relative;z-index:1;margin-top:78%}
 
-.sticker{display:block;width:100%;height:auto;filter:drop-shadow(0 3px 4px rgba(0,0,0,.18))}
+.sticker{display:block;width:100%;height:auto;filter:drop-shadow(0 2px 3px rgba(0,0,0,.14))}
 .sticker.locked .art *{fill:var(--sil)!important;stroke:var(--sil)!important}
 .sticker.locked{filter:none}
 
-.passport{background:var(--surface);border:1px solid var(--line);border-radius:18px;overflow:hidden}
-.pp-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:20px;background:var(--accent);color:var(--accent-ink)}
-.pp-head h2{font-size:1.7rem;font-weight:800}
+/* rails */
+.sec{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin:26px 0 12px}
+.sec h3{font-size:1.35rem}
+.sec a,.linkbtn{font-size:.88rem;font-weight:600;color:var(--brand);background:none;border:0;padding:0}
+.rail{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,1fr);gap:14px;overflow-x:auto;padding-bottom:6px;scroll-snap-type:x mandatory}
+.rail>*{scroll-snap-align:start}
+.ev{display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:center;padding:14px;text-align:left;width:100%}
+.ev .date{width:56px;height:60px;border-radius:12px;background:var(--sunset-soft);color:var(--sunset);display:grid;place-items:center;text-align:center;line-height:1.05;flex:none}
+.ev .date b{font-family:var(--display);font-size:1.4rem;display:block}
+.ev .date span{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em}
+.ev h4{font-size:1.02rem;font-family:var(--body);font-weight:600}
+.ev p{font-size:.84rem;color:var(--muted)}
+
+/* business cards */
+.cover{height:110px;position:relative;display:grid;place-items:center;overflow:hidden}
+.cover svg{position:absolute;inset:0;width:100%;height:100%}
+.logo{position:relative;width:58px;height:58px;border-radius:16px;background:#fff;display:grid;place-items:center;font-family:var(--display);font-weight:700;font-size:1.3rem;box-shadow:0 2px 8px rgba(0,0,0,.15)}
+.bcard{overflow:hidden;text-align:left;width:100%;padding:0;display:grid;grid-template-rows:auto 1fr;align-content:start}
+.bcard .bb{align-content:start}
+.bcard .bb{padding:14px 16px 16px;display:grid;gap:6px}
+.bcard h4{font-size:1.15rem}
+.meta{display:flex;gap:8px;flex-wrap:wrap;align-items:center;font-size:.8rem;color:var(--muted)}
+.open{color:var(--good);font-weight:600}
+.closed{color:var(--bad);font-weight:600}
+.tagrow{display:flex;gap:6px;flex-wrap:wrap}
+.tag{font-size:.72rem;font-weight:600;padding:3px 9px;border-radius:99px;background:var(--surface2);color:var(--ink)}
+.tag.perk{background:var(--brand-soft);color:var(--brand)}
+.tag.evt{background:var(--sunset-soft);color:var(--sunset)}
+.tag.bonus{background:#FFF3D6;color:#7A5200}
+.sample{font-size:.66rem;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);border:1px solid var(--line);border-radius:6px;padding:1px 6px;background:#fff}
+.bgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:16px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+
+/* passport */
+.passport{overflow:hidden}
+.pp-head{display:grid;grid-template-columns:auto 1fr auto;gap:18px;align-items:center;padding:22px;background:var(--brand);color:#fff}
+.pp-head h2{font-size:1.8rem}
 .pp-head .eyebrow{color:inherit;opacity:.8}
 .pp-arc{fill:none}
 .pp-ring{width:92px;height:92px}
 .pp-meta{display:flex;gap:18px;flex-wrap:wrap;font-size:.85rem;opacity:.92}
 @media (max-width:560px){.pp-head{grid-template-columns:1fr auto}.pp-head .pp-avatar{display:none}}
 .pp-avatar{width:64px;height:64px}
-.pp-body{padding:20px;display:grid;gap:24px}
+.pp-body{padding:22px;display:grid;gap:28px}
 .stickergrid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
 @media (max-width:560px){.stickergrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
-.slot{border:2px dashed var(--line);border-radius:16px;padding:12px 10px 10px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;background:var(--surface2);cursor:pointer;border-color:var(--line)}
-.slot.got{border-style:solid;border-color:transparent;background:var(--surface)}
-.slot .sticker{width:92px}
+.slot{border:1.5px dashed var(--line);border-radius:16px;padding:12px 10px 10px;text-align:center;display:flex;flex-direction:column;gap:6px;align-items:center;background:var(--surface2);cursor:pointer}
+.slot.got{border:1px solid var(--line);background:var(--surface)}
+.slot .sticker{width:88px}
 .slot b{font-family:var(--display);font-size:1.02rem}
 .slot .stamp{font-family:var(--mono);font-size:.7rem;color:var(--good);border:1.5px solid var(--good);border-radius:6px;padding:1px 6px;transform:rotate(-4deg)}
 .slot .lockedtxt{font-size:.74rem;color:var(--muted)}
+.wallet{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:12px}
+.perkc{display:grid;grid-template-columns:auto 1fr;gap:12px;align-items:center;padding:14px;border-radius:14px;border:1px solid var(--line);background:var(--surface);text-align:left;width:100%}
+.perkc .logo{width:46px;height:46px;border-radius:12px;font-size:1rem;box-shadow:none;border:1px solid var(--line)}
+.perkc b{display:block;font-weight:600}
+.perkc small{color:var(--muted);font-size:.8rem}
+.perkc.locked{opacity:.6}
+.perkc.used b{text-decoration:line-through;color:var(--muted)}
 .badges{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
-.badge{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:var(--surface2);border:1px solid var(--line)}
-.badge .medal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--locked);color:var(--muted);font-family:var(--display);font-weight:800}
+.badge{display:flex;gap:12px;align-items:center;padding:12px;border-radius:14px;background:var(--surface2)}
+.badge .medal{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;flex:none;background:var(--locked);color:var(--muted);font-family:var(--display);font-weight:700}
 .badge.on .medal{background:var(--sun);color:var(--sun-ink)}
 .badge small{display:block;color:var(--muted);font-size:.8rem;line-height:1.3}
 .badge.off b{color:var(--muted)}
-.give{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px;border-radius:14px;border:2px solid var(--sun);background:var(--surface2)}
-.give .big{font-family:var(--display);font-size:2.2rem;font-weight:800;line-height:1;font-variant-numeric:tabular-nums;text-align:center}
-.give .big small{display:block;font-family:var(--body);font-size:.72rem;font-weight:400;color:var(--muted)}
-.section-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:10px}
-.section-h h3{font-size:1.15rem}
+.give{display:grid;grid-template-columns:1fr auto;gap:14px;align-items:center;padding:16px;border-radius:14px;background:var(--sunset-soft)}
+.give .big{font-family:var(--display);font-size:2.2rem;line-height:1;font-variant-numeric:tabular-nums;text-align:center;color:var(--sunset)}
+.give .big small{display:block;font-family:var(--body);font-size:.72rem;color:var(--muted)}
+.section-h{display:flex;justify-content:space-between;align-items:baseline;gap:10px;margin-bottom:12px}
+.section-h h3{font-size:1.2rem}
 
+/* critters */
+.intro{display:flex;justify-content:space-between;gap:14px;align-items:end;flex-wrap:wrap;margin-bottom:16px}
+.intro h2{font-size:1.9rem}
+.intro p{color:var(--muted);max-width:62ch;margin-top:4px}
 .dir{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:14px}
-.ccard{background:var(--surface);border:1px solid var(--line);border-radius:16px;padding:14px;display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;text-align:left;width:100%}
+.ccard{padding:14px;display:grid;grid-template-columns:84px 1fr;gap:14px;align-items:center;text-align:left;width:100%}
 .ccard .sticker{width:84px}
-.ccard h3{font-size:1.1rem}
-.ccard p{font-size:.85rem;color:var(--muted)}
-.pill{display:inline-block;font-size:.7rem;font-weight:700;padding:2px 8px;border-radius:99px;margin-top:6px}
-.pill.got{background:var(--sun);color:var(--sun-ink)}
+.ccard h3{font-size:1.15rem}
+.ccard p{font-size:.84rem;color:var(--muted)}
+.pill{display:inline-block;font-size:.7rem;font-weight:600;padding:2px 8px;border-radius:99px;margin-top:6px}
+.pill.got{background:var(--brand-soft);color:var(--brand)}
 .pill.no{background:var(--locked);color:var(--muted)}
-.intro{display:flex;justify-content:space-between;gap:14px;align-items:end;flex-wrap:wrap;margin-bottom:14px}
-.intro h2{font-size:1.6rem;font-weight:800}
-.intro p{color:var(--muted);max-width:60ch}
 
-.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-bottom:16px}
-.stat{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:14px}
-.stat b{display:block;font-family:var(--display);font-size:1.8rem;font-weight:800;font-variant-numeric:tabular-nums}
+/* impact */
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-bottom:16px}
+@media (max-width:560px){.stats{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.stat{padding:16px}
+.stat b{display:block;font-family:var(--display);font-size:1.8rem;font-variant-numeric:tabular-nums}
 .stat span{font-size:.82rem;color:var(--muted)}
-.tablewrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:14px}
+.tablewrap{overflow-x:auto}
 table{width:100%;border-collapse:collapse;font-size:.88rem;min-width:640px}
 th,td{padding:10px 12px;text-align:left;border-bottom:1px solid var(--line);vertical-align:middle}
-th{font-size:.72rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:var(--surface2)}
+th{font-size:.7rem;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);background:var(--surface2);font-weight:600}
 td.num{font-variant-numeric:tabular-nums;text-align:right}
 th.num{text-align:right}
 .bar{height:8px;background:var(--surface2);border-radius:99px;min-width:80px;overflow:hidden}
@@ -165,43 +225,54 @@ th.num{text-align:right}
 .admingrid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:16px;align-items:start}
 @media (max-width:900px){.admingrid{grid-template-columns:1fr}}
 form.add{display:grid;gap:10px}
-form.add label{display:grid;gap:4px;font-size:.84rem;font-weight:700}
-form.add input,form.add select,form.add textarea{font:inherit;font-weight:400;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
-.ok{color:var(--good);font-size:.86rem}
+form.add label,form.signup label{display:grid;gap:4px;font-size:.84rem;font-weight:600}
+form.add input,form.add select,form.signup input{font:inherit;font-weight:400;padding:9px 11px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
 .note{font-size:.8rem;color:var(--muted);margin-top:10px}
 
-.scrim{position:fixed;inset:0;background:rgba(10,16,15,.55);display:grid;place-items:center;z-index:50;padding:16px}
-.modal{background:var(--surface);border-radius:20px;max-width:460px;width:100%;max-height:calc(100% - 32px);overflow:auto;padding:22px;position:relative;display:grid;gap:14px}
-.modal .x{position:absolute;right:12px;top:12px;border:0;background:var(--surface2);width:36px;height:36px;border-radius:50%;font-size:1.2rem;line-height:1}
-.modal h2{font-size:1.6rem;font-weight:800}
-.modal .sticker{width:180px;margin:0 auto}
+/* modal */
+.scrim{position:fixed;inset:0;background:rgba(10,16,15,.5);display:grid;place-items:center;z-index:50;padding:16px}
+.modal{background:var(--surface);border-radius:22px;max-width:480px;width:100%;max-height:calc(100% - 32px);overflow:auto;padding:22px;position:relative;display:grid;gap:14px;box-shadow:0 20px 60px rgba(0,0,0,.25)}
+.modal.flush{padding:0;gap:0}
+.modal.flush .mb{padding:20px 22px 22px;display:grid;gap:14px;grid-template-columns:minmax(0,1fr)}
+.modal{grid-template-columns:minmax(0,1fr)}
+.boxw>*{min-width:0}
+.codein{width:100%;letter-spacing:.12em}
+.codein::placeholder{letter-spacing:.04em;text-transform:none}
+.modal .x{position:absolute;right:12px;top:12px;border:0;background:rgba(255,255,255,.92);width:36px;height:36px;border-radius:50%;font-size:1.2rem;line-height:1;z-index:2;box-shadow:0 1px 4px rgba(0,0,0,.12)}
+.modal h2{font-size:1.65rem}
+.modal .sticker{width:170px;margin:0 auto}
+.modal .cover{height:150px}
+.boxw{border:1px solid var(--line);border-radius:14px;padding:14px;display:grid;gap:8px}
+.boxw.perk{background:var(--brand-soft);border-color:transparent}
+.boxw.perk b{font-family:var(--display);font-size:1.2rem;color:var(--brand)}
+.boxw.bonus{background:#FFF8E6;border-color:transparent}
+.evrow{display:flex;gap:12px;align-items:center;font-size:.9rem}
+.evrow .d{font-family:var(--mono);font-size:.78rem;color:var(--sunset);min-width:64px}
+.redeem{text-align:center;display:grid;gap:10px}
+.redeem .code{font-family:var(--mono);font-size:2rem;letter-spacing:.25em;background:var(--surface2);border-radius:14px;padding:16px}
 .celebrate{text-align:center}
 .celebrate .eyebrow{color:var(--good)}
 @media (prefers-reduced-motion:no-preference){
   .pop{animation:pop .6s cubic-bezier(.2,1.6,.4,1)}
   @keyframes pop{from{transform:scale(.3) rotate(-20deg)}to{transform:none}}
 }
-.perk{display:grid;gap:2px;padding:12px 14px;border:2px dashed var(--clay);border-radius:14px;background:var(--surface2)}
-.perk b{font-family:var(--display);font-size:1.15rem}
-.perk small{color:var(--muted)}
-.newbadge{background:var(--sun);color:var(--sun-ink);border-radius:12px;padding:8px 12px;font-weight:700;font-size:.9rem}
+.newbadge{background:#FFF3D6;color:#5A3D00;border-radius:12px;padding:8px 12px;font-weight:600;font-size:.9rem}
 form.signup{display:grid;gap:12px}
-form.signup label{display:grid;gap:4px;font-weight:700;font-size:.88rem}
-form.signup input{font:inherit;font-weight:400;padding:10px 12px;border-radius:10px;border:1px solid var(--line);background:var(--surface2);color:var(--ink)}
-.check{display:flex!important;grid-template-columns:none;gap:8px!important;align-items:center;font-weight:400!important}
+.check{display:flex!important;gap:8px!important;align-items:center;font-weight:400!important}
 @media (max-width:560px){
-  header.top{flex-wrap:nowrap;padding-block:12px 10px}
-  .brand{gap:10px;min-width:0}
-  .brand svg{width:38px;height:38px;flex:none}
-  .brand h1{font-size:1.1rem;white-space:nowrap}
-  .brand small,.proto,.userchip b{display:none}
-  .userchip{padding:3px;flex:none}
+  header.top{padding-block:12px 10px}
+  .brand{gap:10px}
+  .brand svg{width:38px;height:38px}
+  .brand h1{font-size:1.15rem;white-space:nowrap}
+  .brand small,.userchip b{display:none}
+  .userchip{padding:3px}
   .maptools{flex-wrap:nowrap;overflow-x:auto;padding:10px}
   .chip{flex:none;white-space:nowrap}
   .maptools .spacer{display:none}
   .pp-head{padding:16px;gap:12px}
   .pp-head h2{font-size:1.35rem}
   .pp-ring{width:76px;height:76px}
+  .rail{grid-auto-columns:82%}
 }
 </style>
 </head>
@@ -209,74 +280,100 @@ form.signup input{font:inherit;font-weight:400;padding:10px 12px;border-radius:1
 <div class="wrap">
   <header class="top">
     <div class="brand">
-      <svg width="46" height="46" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="56" fill="#fff"/><circle r="50" fill="#4A6B57"/><g transform="scale(.85)" id="logoArt"></g></svg>
+      <svg width="46" height="46" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="58" fill="#1F5F4A"/><circle r="50" fill="#F2B33D"/><g transform="scale(.85)" id="logoArt"></g></svg>
       <div>
-        <h1>Shore Critter Trail <span class="proto">PROTOTYPE</span></h1>
-        <small>Explore the North Shore, one critter at a time</small>
+        <h1>Shore Critter Trail</h1>
+        <small>Kamloops North Shore</small>
       </div>
     </div>
     <div class="userchip"><b id="userName">Demo Explorer</b><button id="profileBtn" type="button">Create profile</button></div>
   </header>
 
   <nav class="tabs" role="tablist" aria-label="Sections">
-    <button role="tab" data-tab="map" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Map</button>
+    <button role="tab" data-tab="map" aria-selected="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 4 3 6v14l6-2 6 2 6-2V4l-6 2-6-2zM9 4v14M15 6v14"/></svg>Explore</button>
+    <button role="tab" data-tab="local" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 9l1.5-5h15L21 9M3 9h18M3 9a3 3 0 0 0 6 0 3 3 0 0 0 6 0 3 3 0 0 0 6 0M5 12v8h14v-8M10 20v-5h4v5"/></svg>Local</button>
     <button role="tab" data-tab="passport" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/></svg>Passport</button>
     <button role="tab" data-tab="critters" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="13" r="7"/><circle cx="9.5" cy="12" r="1" fill="currentColor"/><circle cx="14.5" cy="12" r="1" fill="currentColor"/><path d="M7 7 5 3M17 7l2-4"/></svg>Critters</button>
     <button role="tab" data-tab="admin" aria-selected="false"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 20V10M10 20V4M16 20v-7M22 20H2"/></svg>Impact</button>
   </nav>
 
   <section id="view-map">
+    <div class="hero">
+      <svg class="scene" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <rect width="1200" height="360" fill="#FBE5C8"/>
+        <circle cx="930" cy="120" r="70" fill="#F6C35C"/>
+        <path d="M0 210 C150 150 300 170 430 140 C560 110 680 160 820 130 C960 100 1080 140 1200 120 L1200 360 L0 360Z" fill="#E3B98A"/>
+        <path d="M0 250 C180 200 340 230 500 205 C660 180 820 230 980 200 C1080 182 1150 196 1200 190 L1200 360 L0 360Z" fill="#C8956A"/>
+        <path d="M0 290 C200 260 420 285 640 265 C860 245 1040 280 1200 262 L1200 360 L0 360Z" fill="#7E9A6A"/>
+        <path d="M0 318 C220 300 460 330 700 312 C900 298 1060 318 1200 306 L1200 360 L0 360Z" fill="#3E86A8"/>
+        <g fill="#2F5A45"><path d="M720 270 l12 -34 l12 34z"/><path d="M745 272 l9 -26 l9 26z"/><path d="M1040 262 l12 -36 l12 36z"/><path d="M1066 266 l9 -26 l9 26z"/><path d="M160 278 l11 -30 l11 30z"/></g>
+        <rect width="1200" height="360" fill="url(#heroFade)"/>
+        <defs><linearGradient id="heroFade" x1="0" x2="1"><stop offset="0" stop-color="#FBE5C8" stop-opacity=".9"/><stop offset=".55" stop-color="#FBE5C8" stop-opacity="0"/></linearGradient></defs>
+      </svg>
+      <div class="in">
+        <div class="eyebrow" style="color:#7A5236" id="heroHi">Welcome back, Demo Explorer</div>
+        <h2>Find the critters hiding on the North Shore</h2>
+        <p>Follow the clues, discover local shops and cafés, and unlock perks along the way.</p>
+        <div class="chips"><span class="glass" id="heroCount">3 of 8 found</span><span class="glass" id="heroPerks">2 perks unlocked</span><button class="btn warm sm" type="button" id="heroGo">Continue the trail</button></div>
+      </div>
+    </div>
     <div class="mapgrid">
-      <div class="mapcard">
+      <div class="mapcard card">
         <div class="maptools" id="layerChips"></div>
         <div class="mapscroll"><svg id="map" viewBox="0 0 1000 640" role="img" aria-label="Schematic map of the North Shore with critter locations"></svg></div>
         <div class="mapfoot"><span>Schematic, not to scale. The real build uses a live street map.</span><span id="clueModeLbl"></span></div>
       </div>
-      <aside class="panel" id="panel" aria-live="polite"></aside>
+      <aside class="panel card" id="panel" aria-live="polite"></aside>
     </div>
+    <div class="sec"><h3>Happening on the trail</h3><button class="linkbtn" type="button" data-go="local">See all</button></div>
+    <div class="rail" id="eventRail"></div>
+    <div class="sec"><h3>Local spots on the trail</h3><button class="linkbtn" type="button" data-go="local">Browse all</button></div>
+    <div class="rail" id="bizRail"></div>
+  </section>
+
+  <section id="view-local" hidden>
+    <div class="intro"><div><h2>Local spots</h2><p>The shops, cafés and studios along the trail. Find a critter to unlock its host's perk, or pop in for a bonus clue.</p></div></div>
+    <p class="clue" style="margin-bottom:16px;font-size:.88rem" id="bizNote"></p>
+    <div class="filters" id="bizFilters"></div>
+    <div class="bgrid" id="bizList"></div>
+    <div class="sec"><h3>Upcoming events</h3></div>
+    <div class="bgrid" id="eventList"></div>
   </section>
 
   <section id="view-passport" hidden>
-    <div class="passport">
+    <div class="passport card">
       <div class="pp-head">
-        <svg class="pp-avatar" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="56" fill="#fff"/><circle r="50" fill="#E3A230"/><g transform="scale(.85)" id="avatarArt"></g></svg>
+        <svg class="pp-avatar" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="56" fill="#fff"/><circle r="50" fill="#F2B33D"/><g transform="scale(.85)" id="avatarArt"></g></svg>
         <div>
           <div class="eyebrow">Shore Critter Trail passport</div>
           <h2 id="ppName">Demo Explorer</h2>
           <div class="pp-meta"><span class="mono" id="ppNo">No. NS-0318</span><span id="ppIssued">Issued Sep 10, 2026</span></div>
         </div>
-        <svg class="pp-ring" viewBox="0 0 100 100" aria-label="Trail progress"><circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,.25)" stroke-width="10" class="pp-arc"/><circle id="ppArc" cx="50" cy="50" r="42" stroke="#E3A230" stroke-width="10" stroke-linecap="round" class="pp-arc" transform="rotate(-90 50 50)"/><text id="ppCount" x="50" y="56" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="22" fill="currentColor">3/8</text></svg>
+        <svg class="pp-ring" viewBox="0 0 100 100" aria-label="Trail progress"><circle cx="50" cy="50" r="42" stroke="rgba(255,255,255,.25)" stroke-width="10" class="pp-arc"/><circle id="ppArc" cx="50" cy="50" r="42" stroke="#F2B33D" stroke-width="10" stroke-linecap="round" class="pp-arc" transform="rotate(-90 50 50)"/><text id="ppCount" x="50" y="57" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="22" fill="currentColor">3/8</text></svg>
       </div>
       <div class="pp-body">
-        <div>
-          <div class="section-h"><h3>Stickers</h3><span class="hint" id="ppHint"></span></div>
-          <div class="stickergrid" id="stickerGrid"></div>
-        </div>
+        <div><div class="section-h"><h3>Stickers</h3><span class="hint" id="ppHint"></span></div><div class="stickergrid" id="stickerGrid"></div></div>
+        <div><div class="section-h"><h3>My perks</h3><span class="hint">Show at the counter to use</span></div><div class="wallet" id="wallet"></div></div>
         <div class="give" id="giveaway"></div>
-        <div>
-          <div class="section-h"><h3>Badges</h3></div>
-          <div class="badges" id="badgeList"></div>
-        </div>
+        <div><div class="section-h"><h3>Badges</h3></div><div class="badges" id="badgeList"></div></div>
       </div>
     </div>
   </section>
 
   <section id="view-critters" hidden>
-    <div class="intro">
-      <div><h2>Meet the critters</h2><p>Each micro mural has its own page with its artist, host business and a nearby stop to explore. Locked critters stay a mystery until you find them.</p></div>
-    </div>
+    <div class="intro"><div><h2>Meet the critters</h2><p>Each micro mural has its own page with its artist, host spot and a nearby stop to explore. Locked critters stay a mystery until you find them.</p></div></div>
     <div class="dir" id="dirList"></div>
   </section>
 
   <section id="view-admin" hidden>
     <div class="intro">
-      <div><h2>Impact on the North Shore</h2></div>
+      <div><h2>Impact on the North Shore</h2><p>What the BIA would see after one season. All numbers are sample data. Real ones could feed the annual Impacts survey.</p></div>
       <button class="btn alt sm" id="resetBtn" type="button">Reset demo</button>
     </div>
     <div class="stats" id="stats"></div>
     <div class="admingrid">
-      <div class="tablewrap"><table><thead><tr><th>Critter</th><th>Host</th><th class="num">Visits</th><th class="num">Perks used</th><th>Share</th><th>Chip / QR link</th></tr></thead><tbody id="adminRows"></tbody></table></div>
-      <div class="panel">
+      <div class="tablewrap card"><table><thead><tr><th>Critter</th><th>Host</th><th class="num">Visits</th><th class="num">Perks used</th><th>Share</th><th>Chip / QR link</th></tr></thead><tbody id="adminRows"></tbody></table></div>
+      <div class="panel card">
         <h3 style="font-size:1.15rem">Add a critter</h3>
         <form class="add" id="addForm">
           <label for="aName">Critter name<input id="aName" required placeholder="e.g. Pip"></label>
@@ -306,79 +403,130 @@ const ART = {
   salmon:`<path d="M-6 -12 C-2 -26 10 -24 14 -12Z" fill="#B7332E"/><path d="M-40 0 C-26 -18 18 -18 30 -4 L45 -16 L41 0 L45 16 L30 4 C18 18 -26 18 -40 0Z" fill="#D7443E"/><path d="M-40 0 C-34 -12 -24 -15 -17 -14 L-17 14 C-24 15 -34 12 -40 0Z" fill="#4F7A4A"/><circle cx="-29" cy="-4" r="3" fill="#FFFFFF"/><circle cx="-29" cy="-4" r="1.4" fill="#1C1C1C"/><path d="M-40 1 C-38 6 -34 7 -31 5" stroke="#2F4A2C" stroke-width="2" fill="none" stroke-linecap="round"/>`,
   turtle:`<ellipse cx="-20" cy="15" rx="7" ry="4.5" fill="#4B5E3C"/><ellipse cx="18" cy="15" rx="7" ry="4.5" fill="#4B5E3C"/><path d="M-36 6 L-44 10 L-36 10Z" fill="#4B5E3C"/><circle cx="36" cy="2" r="9" fill="#4B5E3C"/><path d="M30 -1 L44 -2 M30 4 L44 5" stroke="#F2C230" stroke-width="1.8" fill="none"/><circle cx="39" cy="-1" r="1.7" fill="#1C1C1C"/><path d="M-32 8 C-30 -24 28 -24 32 8Z" fill="#3E5E3A"/><path d="M-12 -12 L-4 -4 L4 -4 L12 -12 M-4 -4 L-6 8 M4 -4 L6 8 M-20 -2 L-6 8 M20 -2 L6 8" stroke="#8FB36A" stroke-width="2" fill="none"/><rect x="-34" y="6" width="68" height="7" rx="3.5" fill="#D9573B"/>`
 };
-function letterArt(letter){return `<text x="0" y="16" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="52" fill="#FFFFFF">${esc(letter)}</text>`}
+function letterArt(letter){return `<text x="0" y="16" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="52" fill="#FFFFFF">${esc(letter)}</text>`}
 function esc(s){return String(s).replace(/[&<>"']/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]))}
+
+/* Real North Shore businesses from the pilot outreach list. Names, addresses and categories are real.
+   Perks, events and bonus clues are EXAMPLES for the pitch: none of these businesses has joined yet. */
+const BUSINESSES = [
+  {id:"kap",name:"Kamloops Art Party",cat:"Art studio",group:"fun",color:"#8E5BC2",x:548,y:458,critter:"sturgie",addr:"8-177 Tranquille Rd",phone:"(250) 299-4342",
+   about:"North Shore art studio with drop-ins, workshops and private events: acrylics, watercolour, ceramics, paint and resin pours and more. Home of the colourful mural funded by the North Shore BIA.",
+   perk:"$5 off a drop-in art session",
+   events:[{d:"2026-11-21",t:"13:00",title:"Family drop-in art afternoon",note:"Paint your own critter"},{d:"2026-12-06",t:"13:00",title:"Critter mural workshop",note:"Learn how the trail murals are made"}],
+   bonus:{clue:"Ask the studio team which critter they painted first.",code:"PAINT",reward:"Bonus stamp"}},
+  {id:"fivebean",name:"5Bean Brewbar & Cafe",cat:"Coffee shop",group:"food",color:"#3E3A36",x:478,y:398,critter:"olive",addr:"289 Tranquille Rd",
+   about:"Coffee and baked goods on Tranquille Rd.",perk:"10% off your next drink",events:[],
+   bonus:{clue:"Ask the barista for today's trail code.",code:"BEAN",reward:"Bonus stamp"}},
+  {id:"harvestmoon",name:"Harvest Moon Bakery",cat:"Bakery",group:"food",color:"#B5874E",x:452,y:300,critter:"hoodoo",addr:"107 Yew St",
+   about:"Bakery just off Tranquille on Yew St.",perk:"Free cookie with any purchase",events:[],
+   bonus:{clue:"Find the marmot hiding near the bread display.",code:"BUNS",reward:"Bonus stamp"}},
+  {id:"cuttingboard",name:"Cutting Board Bistro & Bakery",cat:"Breakfast & bakery",group:"food",color:"#6B5B4B",x:650,y:248,critter:"horace",addr:"750 Fortune Dr, Unit 21",
+   about:"Breakfast, baking and coffee on Fortune Dr.",perk:"Free coffee with any breakfast",events:[],
+   bonus:{clue:"Ask your server where Horace is hiding.",code:"TOAST",reward:"Bonus stamp"}},
+  {id:"hausofmisfit",name:"Haus of Misfit",cat:"Gift shop",group:"shop",color:"#2F3B4C",x:518,y:428,critter:"maggie",addr:"275 Tranquille Rd",phone:"(250) 554-0078",
+   about:"Gift shop with local art and handmade goods.",perk:"10% off local art",
+   events:[{d:"2026-12-12",t:"12:00",title:"Holiday makers' afternoon",note:"Meet local makers"}],
+   bonus:{clue:"Count the magpies in the window display.",code:"SHINY",reward:"Bonus stamp"}},
+  {id:"loboy",name:"Lo-Boy Market",cat:"Discount store",group:"shop",color:"#B4483F",x:352,y:330,critter:"bea",addr:"459 Tranquille Rd",
+   about:"Discount store on Tranquille Rd.",perk:"$5 off $25 or more",events:[],
+   bonus:{clue:"Ask at the till for the trail code.",code:"DEALS",reward:"Bonus stamp"}},
+  {id:"northills",name:"Northills Shopping Centre",cat:"Shopping centre",group:"shop",color:"#2C7DA0",x:240,y:282,critter:"sully",addr:"700 Tranquille Rd",phone:"(250) 376-1259",
+   about:"North Shore shopping centre on Tranquille Rd.",perk:"Bonus giveaway entry",
+   events:[{d:"2026-12-13",t:"11:00",title:"Holiday family day",note:"Trail booth and colouring station"}],
+   bonus:{clue:"Find the trail poster near the main entrance.",code:"MALL",reward:"Bonus stamp"}},
+  {id:"logjam",name:"Logjam Coffee",cat:"Coffee roastery",group:"food",color:"#7A4E2E",x:402,y:352,critter:null,need:2,addr:"437 Tranquille Rd",
+   about:"Specialty coffee roastery on Tranquille Rd.",perk:"Free pastry with a latte",
+   events:[{d:"2026-11-28",t:"10:00",title:"Coffee tasting morning",note:"Try a few local roasts"}],
+   bonus:{clue:"Ask which roast is named after the river.",code:"ROAST",reward:"Bonus stamp"}},
+  {id:"redbeard",name:"Red Beard Cafe",cat:"Cafe",group:"food",color:"#A33B2A",x:378,y:340,critter:null,need:2,addr:"449 Tranquille Rd",
+   about:"Cafe on Tranquille Rd.",perk:"10% off brunch",events:[],
+   bonus:{clue:"Ask your server for the trail code.",code:"BEARD",reward:"Bonus stamp"}},
+  {id:"treasures",name:"Treasures",cat:"Gift shop",group:"shop",color:"#4A6B57",x:214,y:270,critter:null,need:3,addr:"700 Tranquille Rd #12",phone:"(250) 376-4643",
+   about:"Gift shop inside Northills Shopping Centre.",perk:"10% off your purchase",events:[],
+   bonus:{clue:"Look for the critter tucked in the front display.",code:"GIFTS",reward:"Bonus stamp"}},
+  {id:"fortune",name:"Fortune Shopping Centre",cat:"Shopping centre",group:"shop",color:"#5E6A63",x:664,y:292,critter:null,need:3,addr:"750 Fortune Dr",phone:"(250) 376-0062",
+   about:"Shopping centre on Fortune Dr.",perk:"Bonus giveaway entry",events:[],
+   bonus:{clue:"Find the trail sign by the main doors.",code:"FORTUNE",reward:"Bonus stamp"}}
+];
+const BIZ_NOTE="Real North Shore businesses shown for the pilot. They haven't joined yet: perks, events and bonus clues are examples.";
+function initials(n){return n.split(" ").filter(w=>/^[A-Z0-9]/.test(w)).slice(0,2).map(w=>w[0]).join("")}
+function mapsLink(b){return "https://www.google.com/maps/search/?api=1&query="+encodeURIComponent(b.name+" "+b.addr+" Kamloops BC")}
+function biz(id){return BUSINESSES.find(b=>b.id===id)}
+function bizFor(cid){return BUSINESSES.find(b=>b.critter===cid)}
+function bizCover(b,big){return `<div class="cover" style="background:${b.color}"><svg viewBox="0 0 400 150" preserveAspectRatio="xMidYMid slice" aria-hidden="true"><path d="M0 110 C80 80 160 95 240 78 C310 64 360 80 400 72 L400 150 L0 150Z" fill="#fff" opacity=".12"/><path d="M0 128 C100 112 200 126 300 112 C350 105 380 110 400 106 L400 150 L0 150Z" fill="#fff" opacity=".14"/></svg><div class="logo" style="color:${b.color}${big?";width:68px;height:68px":""}">${esc(initials(b.name))}</div></div>`}
 
 const BASE_CRITTERS = [
   {id:"olive",name:"Olive",species:"Burrowing owl",art:"owl",bg:"#E9C46A",x:250,y:292,code:"OWL7",
    clue:"Look low. Olive likes to peek out from ground level, near where Tranquille starts to bend west.",
+   hint2:"Her plaque sits low on a wall, under a window, close to a bus stop.",
    story:"Olive moved into the neighbourhood to keep an eye on the bus stop. She has opinions about every hat that walks by.",
    fact:"Burrowing owls nest in underground burrows. Kamloops has a well-known breeding and recovery program for them.",
    nearby:"Grab a coffee two doors down and look for the next clue on the menu board.", access:"Step-free sidewalk · plaque at 1.1 m · daylight hours"},
   {id:"hoodoo",name:"Hoodoo",species:"Yellow-bellied marmot",art:"marmot",bg:"#D9A066",x:420,y:372,code:"MRM3",
    clue:"Hoodoo is sunbathing on a warm wall. Follow Tranquille until you smell fresh bread.",
+   hint2:"Check the sunny, south-facing wall of the bakery block.",
    story:"Hoodoo spends summer on the rocks above the river and winter pretending he never left.",
    fact:"Marmots whistle to warn each other, which is why some people call them whistle pigs.",
    nearby:"Walk one block toward the river for a view of the bridge.", access:"Step-free · bench nearby · open 24 h"},
   {id:"sturgie",name:"Sturgie",species:"White sturgeon",art:"sturgeon",bg:"#8FC1C8",x:520,y:505,code:"STG1",
    clue:"Sturgie never strays far from the water. Check near the north end of the Overlanders Bridge.",
+   hint2:"Look along the bridge railing on the river side, at the north end.",
    story:"Sturgie is older than every building on the block and is not shy about mentioning it.",
    fact:"White sturgeon are the largest freshwater fish in North America and can live for more than 100 years.",
    nearby:"Follow the river path west toward McArthur Island Park.", access:"Paved path · slight slope · daylight hours"},
   {id:"horace",name:"Horace",species:"Bighorn sheep",art:"bighorn",bg:"#B7C98F",x:632,y:180,code:"BHS5",
    clue:"Horace likes the high ground. Head up Fortune Drive and look above the doorways.",
+   hint2:"Look up. Horace is mounted above a shop door, not at eye level.",
    story:"Horace practises his head-butts on parking meters. So far the meters are winning.",
    fact:"California bighorn sheep live on the grasslands and bluffs around Kamloops.",
    nearby:"There is a bakery on this block that hides a bonus clue.", access:"Step-free · plaque at 1.2 m · business hours"},
   {id:"maggie",name:"Maggie",species:"Black-billed magpie",art:"magpie",bg:"#A9C4E0",x:470,y:262,code:"MAG9",
    clue:"Maggie collects shiny things. Find the side street with the most sparkle.",
+   hint2:"Her side street faces a big mural on the laneway across the road.",
    story:"Maggie has a stash of bottle caps and one very lost earring. She will not give it back.",
    fact:"Magpies are one of the few birds that can recognise themselves in a mirror.",
    nearby:"Look across the street for a large mural on the laneway.", access:"Step-free · lane access · daylight hours"},
   {id:"bea",name:"Bea",species:"Little brown bat",art:"bat",bg:"#C7B8E0",x:700,y:420,code:"BAT2",
    clue:"Bea hangs out where it's shady. Check the covered corner near Fortune and the river flats.",
+   hint2:"She's tucked under a covered entrance, out of the sun.",
    story:"Bea works the night shift eating mosquitoes and sleeps through every brunch rush.",
    fact:"One little brown bat can eat hundreds of insects in an hour.",
    nearby:"Stop by the community garden a block east.", access:"Step-free · covered · open 24 h"},
   {id:"sully",name:"Sully",species:"Sockeye salmon",art:"salmon",bg:"#F2A08F",x:806,y:360,code:"SAL4",
    clue:"Sully is swimming upstream. Walk toward the Halston Bridge and look along the water.",
+   hint2:"He faces upstream on a wall along the Halston Bridge approach.",
    story:"Sully is on the way home and has zero time for small talk.",
    fact:"Sockeye turn bright red with green heads when they return to spawn.",
    nearby:"Cross the bridge for a riverside view of the North Thompson.", access:"Step-free · wide sidewalk · daylight hours"},
   {id:"tilly",name:"Tilly",species:"Western painted turtle",art:"turtle",bg:"#9CCB8F",x:392,y:470,code:"TRT6",
    clue:"Tilly is taking it slow by the water in the big park on the island.",
+   hint2:"Follow the paved loop until you reach the pond.",
    story:"Tilly has been walking to the corner store since spring. She is almost there.",
    fact:"The western painted turtle is BC's only native pond turtle.",
    nearby:"The park has washrooms, a playground and a paved loop.", access:"Paved loop · accessible parking nearby · park hours"}
 ];
-const HOSTS = {olive:"Host business (TBD)",hoodoo:"Host business (TBD)",sturgie:"City property (TBD)",horace:"Host business (TBD)",maggie:"Host business (TBD)",bea:"Host business (TBD)",sully:"Host property (TBD)",tilly:"City park (TBD)"};
-const PERKS = {olive:"10% off your next coffee",hoodoo:"Free cookie with your passport",sturgie:"2-for-1 ice cream cones",horace:"Free pastry with any drink",maggie:"$5 off $25 or more",bea:"Free kids' activity pack",sully:"Bonus giveaway entry",tilly:"Free drink with a combo"};
 const SCANS = {olive:412,hoodoo:388,sturgie:351,horace:240,maggie:297,bea:205,sully:168,tilly:334};
-BASE_CRITTERS.forEach(c=>{c.perk=PERKS[c.id];c.redeemed=Math.round(SCANS[c.id]*0.31);c.host=HOSTS[c.id];c.artist="Local artist (TBD)";c.scans=SCANS[c.id]});
+BASE_CRITTERS.forEach(c=>{const b=bizFor(c.id);c.host=b?b.name:"McArthur Island Park (City of Kamloops, proposed)";c.biz=b?b.id:null;c.perk=b?b.perk:null;c.redeemed=Math.round(SCANS[c.id]*0.31);c.artist="Local artist (to be selected)";c.scans=SCANS[c.id]});
 
 const OTHER = [
   {layer:"art",x:338,y:302,name:"Community & family mural",text:"By Zac Abney (2020), on the Hatsuki Sushi building at Tranquille Rd and Aspen St. A family looking out over Kamloops Lake from Cooney Bay. Painted with input from the North Shore BIA."},
   {layer:"art",x:528,y:446,name:"Kamloops Art Party mural",text:"By Carly Schmidt and the Kamloops Art Party team (2024), at 177 Tranquille Rd. Funded by the North Shore BIA."},
   {layer:"art",x:585,y:405,name:"Sculpture (sample)",text:"A public sculpture stop with viewing and access notes."},
   {layer:"art",x:320,y:430,name:"Historical landmark (sample)",text:"A heritage stop with a short history of the North Shore."},
-  {layer:"biz",x:498,y:420,name:"Participating business",text:"Trail-exclusive offer example: 10% off after you unlock a critter."},
-  {layer:"biz",x:596,y:292,name:"Participating business",text:"Offer example: free cookie with a Trail passport."},
-  {layer:"biz",x:286,y:352,name:"Participating business",text:"Offer example: bonus giveaway entry for visiting."},
-  {layer:"biz",x:740,y:340,name:"Participating business",text:"Offer example: a clue to a nearby critter."},
   {layer:"acc",x:572,y:430,name:"Accessible parking",text:"Accessible stalls and a step-free route to nearby critters."},
   {layer:"acc",x:436,y:500,name:"Accessible parking",text:"Park lot with accessible stalls and a paved loop."}
 ];
 const LAYERS = [
-  {id:"critters",label:"Critters",color:"var(--sun)"},
+  {id:"critters",label:"Critters",color:"var(--sunset)"},
+  {id:"biz",label:"Local spots",color:"#1F5F4A"},
   {id:"art",label:"Public art",color:"#8E5BC2"},
-  {id:"biz",label:"Businesses",color:"#D9573B"},
   {id:"acc",label:"Accessible parking",color:"#2F6FD0"},
   {id:"route",label:"Walking route",color:"var(--river)"},
   {id:"light",label:"Tranquille lights",color:"#F5C94A"}
 ];
 
-const KEY="sct-demo-v2";
-const SEED={name:"Demo Explorer",issued:"2026-09-10",collected:{olive:"2026-09-12",sturgie:"2026-09-14",hoodoo:"2026-09-20"},artSeen:[],extra:[],layers:{critters:true,art:true,biz:false,acc:false,route:true,light:false},clueMode:true};
+const KEY="sct-demo-v4";
+const SEED={name:"Demo Explorer",issued:"2026-09-10",collected:{olive:"2026-09-12",sturgie:"2026-09-14",hoodoo:"2026-09-20"},artSeen:[],hintsUsed:{},used:{},stamps:{},extra:[],layers:{critters:true,biz:true,art:false,acc:false,route:true,light:false},clueMode:true};
 let S=load();
 function load(){try{const r=localStorage.getItem(KEY);if(r)return Object.assign(clone(SEED),JSON.parse(r))}catch(e){}return clone(SEED)}
 function save(){try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}}
@@ -389,10 +537,18 @@ function got(id){return !!S.collected[id]}
 function count(){return critters().filter(c=>got(c.id)).length}
 function fmt(d){return new Date(d+"T12:00:00").toLocaleDateString("en-CA",{month:"short",day:"numeric",year:"numeric"})}
 function today(){const d=new Date();return d.getFullYear()+"-"+String(d.getMonth()+1).padStart(2,"0")+"-"+String(d.getDate()).padStart(2,"0")}
+function perkUnlocked(b){return b.critter?got(b.critter):count()>=(b.need||2)}
+function unlockHow(b){const c=b.critter?byId(b.critter):null;return c?`Find ${c.name} to unlock`:`Find any ${b.need||2} critters to unlock`}
+function unlockedPerks(){return BUSINESSES.filter(perkUnlocked)}
+function stampCount(){return Object.keys(S.stamps).length}
 
 function sticker(c,locked,cls=""){
   const art=c.art&&ART[c.art]?ART[c.art]:letterArt(c.name[0]);
-  return `<svg class="sticker ${locked?"locked":""} ${cls}" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="57" fill="${locked?"var(--line)":"#FFFFFF"}"/><circle r="50" fill="${locked?"var(--locked)":c.bg}"/><g class="art" transform="scale(.86)">${art}</g>${locked?`<text x="0" y="18" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="44" fill="var(--paper)">?</text>`:""}</svg>`;
+  return `<svg class="sticker ${locked?"locked":""} ${cls}" viewBox="-60 -60 120 120" aria-hidden="true"><circle r="57" fill="${locked?"var(--line)":"#FFFFFF"}"/><circle r="50" fill="${locked?"var(--locked)":c.bg}"/><g class="art" transform="scale(.86)">${art}</g>${locked?`<text x="0" y="18" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="44" fill="var(--paper)">?</text>`:""}</svg>`;
+}
+function stickerInner(c,locked){
+  const art=c.art&&ART[c.art]?ART[c.art]:letterArt(c.name[0]);
+  return `<circle r="57" fill="${locked?"var(--line)":"#FFFFFF"}"/><circle r="50" fill="${locked?"var(--locked)":c.bg}"/><g class="art" transform="scale(.86)" ${locked?'style="opacity:0"':""}>${art}</g>${locked?`<text x="0" y="18" text-anchor="middle" font-family="Fraunces, Georgia, serif" font-weight="700" font-size="44" fill="var(--muted)">?</text>`:""}`;
 }
 
 function badges(){
@@ -401,23 +557,35 @@ function badges(){
     {id:"first",name:"First Critter Found",desc:"Collect your first sticker.",on:n>=1,m:"1"},
     {id:"five",name:"Five Critters Collected",desc:"Unlocks the milestone prize draw.",on:n>=5,m:"5"},
     {id:"all",name:"Trail Completed",desc:`Collect all ${t} critters.`,on:n>=t,m:"★"},
+    {id:"local",name:"Shop Local Supporter",desc:"Collect 3 bonus stamps in local spots.",on:stampCount()>=3,m:"$"},
     {id:"art",name:"Public Art Explorer",desc:"Open 3 public art stops on the map.",on:S.artSeen.length>=3,m:"A"}
   ];
 }
-function entries(){const n=count(),t=critters().length;return (n>=5?1:0)+(n>=t?3:0)}
+function entries(){const n=count(),t=critters().length;return (n>=5?1:0)+(n>=t?3:0)+stampCount()}
 
+const VIEWS=["map","local","passport","critters","admin"];
 const tabs=[...document.querySelectorAll("nav.tabs button")];
 tabs.forEach(b=>b.addEventListener("click",()=>show(b.dataset.tab)));
-function show(t){tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));["map","passport","critters","admin"].forEach(v=>document.getElementById("view-"+v).hidden=v!==t);render();}
+document.querySelectorAll("[data-go]").forEach(b=>b.addEventListener("click",()=>show(b.dataset.go)));
+function show(t){tabs.forEach(b=>b.setAttribute("aria-selected",b.dataset.tab===t));VIEWS.forEach(v=>document.getElementById("view-"+v).hidden=v!==t);render();window.scrollTo({top:0})}
 
-let selected=null; let panelMode="info"; let manualErr="";
+let selected=null; let panelMode="info"; let manualErr=""; let bizFilter="all";
+
+function drawHero(){
+  const n=count(),t=critters().length,p=unlockedPerks().length;
+  document.getElementById("heroHi").textContent="Welcome back, "+S.name;
+  document.getElementById("heroCount").textContent=`${n} of ${t} critters found`;
+  document.getElementById("heroPerks").textContent=`${p} perk${p===1?"":"s"} unlocked`;
+  document.getElementById("heroGo").onclick=()=>{const next=critters().find(c=>!got(c.id));selected=next?next.id:null;panelMode="info";render();document.getElementById("panel").scrollIntoView({behavior:"smooth",block:"center"})};
+}
+
 function drawMap(){
   const m=document.getElementById("map");
   const L=S.layers;
   let g=`
-  <defs><pattern id="blocks" width="44" height="44" patternUnits="userSpaceOnUse"><rect width="44" height="44" fill="var(--land)"/><rect x="4" y="4" width="36" height="36" rx="3" fill="var(--surface2)" opacity=".55"/></pattern></defs>
+  <defs><pattern id="blocks" width="44" height="44" patternUnits="userSpaceOnUse"><rect width="44" height="44" fill="var(--land)"/><rect x="4" y="4" width="36" height="36" rx="4" fill="#FFFFFF" opacity=".55"/></pattern></defs>
   <rect width="1000" height="640" fill="url(#blocks)"/>
-  <path d="M0 560 C220 540 380 575 500 565 C620 555 720 540 820 548 C880 552 940 560 1000 556 L1000 640 L0 640Z" fill="var(--surface2)"/>
+  <path d="M0 560 C220 540 380 575 500 565 C620 555 720 540 820 548 C880 552 940 560 1000 556 L1000 640 L0 640Z" fill="#F6F1E6"/>
   <path d="M-10 572 C200 556 370 590 500 580 C620 570 730 548 820 548 C880 548 940 556 1010 552" stroke="var(--river)" stroke-width="46" fill="none"/>
   <path d="M930 -10 C905 110 915 220 885 320 C860 410 835 480 822 546" stroke="var(--river)" stroke-width="34" fill="none"/>
   <path d="M340 440 C380 420 450 430 478 462 C500 490 470 528 420 530 C370 532 330 510 328 480 C326 462 330 448 340 440Z" fill="var(--park)"/>
@@ -428,21 +596,21 @@ function drawMap(){
   <path d="M470 420 L500 250 M360 360 L380 230 M300 320 L260 440 M620 250 L760 240 M608 420 L760 430" stroke="var(--street)" stroke-width="7" fill="none" stroke-linecap="round"/>
   <path d="M566 470 L552 624" stroke="var(--muted)" stroke-width="10" fill="none" opacity=".75"/>
   <path d="M858 302 L912 298" stroke="var(--muted)" stroke-width="9" fill="none" opacity=".75"/>
-  <g font-family="Atkinson Hyperlegible, sans-serif" font-size="15" fill="var(--muted)" font-weight="700">
+  <g font-family="Inter, sans-serif" font-size="14" fill="var(--muted)" font-weight="600">
     <text x="118" y="238" transform="rotate(12 118 238)">TRANQUILLE RD</text>
     <text x="648" y="118" transform="rotate(-82 648 118)">FORTUNE DR</text>
     <text x="680" y="314" transform="rotate(-4 680 314)">HALSTON AVE</text>
-    <text x="360" y="455" font-size="13" fill="var(--ink)" opacity=".7">McArthur Island Park</text>
-    <text x="580" y="612" font-size="12">Overlanders Bridge</text>
-    <text x="850" y="270" font-size="12">Halston Bridge</text>
-    <text x="200" y="584" font-size="14" fill="#FFFFFF" opacity=".9" letter-spacing="3">THOMPSON RIVER</text>
-    <text x="905" y="140" font-size="12" fill="#FFFFFF" opacity=".9" transform="rotate(-80 905 140)" letter-spacing="2">N. THOMPSON</text>
-    <text x="640" y="632" font-size="13">DOWNTOWN ↓</text>
+    <text x="360" y="455" font-size="12" fill="var(--ink)" opacity=".7">McArthur Island Park</text>
+    <text x="580" y="612" font-size="11">Overlanders Bridge</text>
+    <text x="850" y="270" font-size="11">Halston Bridge</text>
+    <text x="200" y="584" font-size="13" fill="#FFFFFF" opacity=".9" letter-spacing="3">THOMPSON RIVER</text>
+    <text x="905" y="140" font-size="11" fill="#FFFFFF" opacity=".9" transform="rotate(-80 905 140)" letter-spacing="2">N. THOMPSON</text>
+    <text x="640" y="632" font-size="12">DOWNTOWN ↓</text>
   </g>
   <g transform="translate(950 60)"><circle r="20" fill="var(--surface)" stroke="var(--line)"/><path d="M0 -13 L6 4 L0 0 L-6 4Z" fill="var(--ink)"/><text y="16" text-anchor="middle" font-size="9" font-weight="700" fill="var(--muted)" font-family="sans-serif">N</text></g>`;
   if(L.light){
     const tq="M560 470 C470 420 380 360 300 320 C220 282 140 250 20 232";
-    g+=`<path d="${tq}" stroke="#F5C94A" stroke-width="30" fill="none" stroke-linecap="round" opacity=".28"/><path d="${tq}" stroke="#FFE08A" stroke-width="9" stroke-dasharray="1 24" stroke-linecap="round" fill="none"/><text x="60" y="212" font-size="12" font-weight="700" fill="var(--muted)" font-family="Atkinson Hyperlegible, sans-serif" transform="rotate(12 60 212)">LIGHTS + BANNERS · OVERLANDERS TO NORTHILLS</text>`;
+    g+=`<path d="${tq}" stroke="#F5C94A" stroke-width="30" fill="none" stroke-linecap="round" opacity=".28"/><path d="${tq}" stroke="#FFE08A" stroke-width="9" stroke-dasharray="1 24" stroke-linecap="round" fill="none"/>`;
   }
   if(L.route){
     const pts=["olive","maggie","hoodoo","tilly","sturgie","bea","horace","sully"].map(id=>byId(id)).filter(Boolean);
@@ -451,32 +619,30 @@ function drawMap(){
   OTHER.forEach((o,i)=>{
     if(!L[o.layer])return;
     const col=LAYERS.find(l=>l.id===o.layer).color;
-    const sym=o.layer==="art"?"✦":o.layer==="biz"?"$":"P";
-    g+=`<g class="pin ${selected==="o"+i?"sel":""}" tabindex="0" role="button" aria-label="${esc(o.name)}" data-other="${i}" transform="translate(${o.x} ${o.y})"><circle class="ring" r="15" fill="${col}" stroke="var(--surface)" stroke-width="3"/><text y="5.5" text-anchor="middle" font-size="15" font-weight="700" fill="#FFFFFF" font-family="sans-serif">${sym}</text></g>`;
+    const sym=o.layer==="art"?"✦":"P";
+    g+=`<g class="pin ${selected==="o"+i?"sel":""}" tabindex="0" role="button" aria-label="${esc(o.name)}" data-other="${i}" transform="translate(${o.x} ${o.y})"><circle class="ring" r="14" fill="${col}" stroke="var(--surface)" stroke-width="3"/><text y="5" text-anchor="middle" font-size="14" font-weight="700" fill="#FFFFFF" font-family="sans-serif">${sym}</text></g>`;
   });
+  if(L.biz){
+    BUSINESSES.forEach(b=>{
+      const ini=initials(b.name);
+      g+=`<g class="pin" tabindex="0" role="button" aria-label="${esc(b.name)}, ${esc(b.cat)}" data-biz="${b.id}" transform="translate(${b.x} ${b.y})"><rect class="ring" x="-16" y="-16" width="32" height="32" rx="9" fill="${b.color}" stroke="var(--surface)" stroke-width="3"/><text y="4.5" text-anchor="middle" font-size="12" font-weight="700" fill="#FFFFFF" font-family="Inter, sans-serif">${esc(ini)}</text></g>`;
+    });
+  }
   if(L.critters){
     critters().forEach(c=>{
       const have=got(c.id), sel=selected===c.id;
       if(!have && S.clueMode){
-        g+=`<g class="pin ${sel?"sel":""}" tabindex="0" role="button" aria-label="Clue zone for a hidden critter" data-critter="${c.id}" transform="translate(${c.x+(c.id.length*7%23)-11} ${c.y+(c.id.length*5%19)-9})"><circle class="zone" r="46"/><circle class="ring" r="17" fill="var(--surface)" stroke="var(--sun)" stroke-width="3"/><text y="7" text-anchor="middle" font-size="20" font-weight="800" fill="var(--ink)" font-family="Bricolage Grotesque, sans-serif">?</text></g>`;
+        g+=`<g class="pin ${sel?"sel":""}" tabindex="0" role="button" aria-label="Clue zone for a hidden critter" data-critter="${c.id}" transform="translate(${c.x+(c.id.length*7%23)-11} ${c.y+(c.id.length*5%19)-9})"><circle class="zone" r="46"/><circle class="ring" r="17" fill="var(--surface)" stroke="var(--sunset)" stroke-width="3"/><text y="7" text-anchor="middle" font-size="20" font-weight="700" fill="var(--ink)" font-family="Fraunces, Georgia, serif">?</text></g>`;
       } else {
         g+=`<g class="pin ${sel?"sel":""}" tabindex="0" role="button" aria-label="${esc(c.name)} the ${esc(c.species)}${have?", collected":""}" data-critter="${c.id}" transform="translate(${c.x} ${c.y})"><circle class="ring" r="27" fill="none" stroke="transparent"/><g transform="scale(.42)">${stickerInner(c,!have)}</g>${have?`<circle cx="18" cy="-18" r="9" fill="var(--good)" stroke="var(--surface)" stroke-width="2"/><path d="M14 -18 l3 3 l5 -6" stroke="#fff" stroke-width="2.4" fill="none" stroke-linecap="round"/>`:""}</g>`;
       }
     });
   }
   m.innerHTML=g;
-  m.querySelectorAll("[data-critter]").forEach(el=>{
-    const f=()=>{selected=el.dataset.critter;panelMode="info";manualErr="";render()};
-    el.addEventListener("click",f);el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}});
-  });
-  m.querySelectorAll("[data-other]").forEach(el=>{
-    const f=()=>{const i=+el.dataset.other;selected="o"+i;if(OTHER[i].layer==="art"&&!S.artSeen.includes(i)){S.artSeen.push(i);save();if(S.artSeen.length===3)toast("Badge earned: Public Art Explorer")}render()};
-    el.addEventListener("click",f);el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f()}});
-  });
-}
-function stickerInner(c,locked){
-  const art=c.art&&ART[c.art]?ART[c.art]:letterArt(c.name[0]);
-  return `<circle r="57" fill="${locked?"var(--line)":"#FFFFFF"}"/><circle r="50" fill="${locked?"var(--locked)":c.bg}"/><g class="art" transform="scale(.86)" ${locked?'style="opacity:.0"':""}>${art}</g>${locked?`<text x="0" y="18" text-anchor="middle" font-family="Bricolage Grotesque, sans-serif" font-weight="800" font-size="44" fill="var(--muted)">?</text>`:""}`;
+  const bind=(sel,f)=>m.querySelectorAll(sel).forEach(el=>{el.addEventListener("click",()=>f(el));el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f(el)}})});
+  bind("[data-critter]",el=>{selected=el.dataset.critter;panelMode="info";manualErr="";render()});
+  bind("[data-biz]",el=>openBiz(el.dataset.biz));
+  bind("[data-other]",el=>{const i=+el.dataset.other;selected="o"+i;if(OTHER[i].layer==="art"&&!S.artSeen.includes(i)){S.artSeen.push(i);save();if(S.artSeen.length===3)toast("Badge earned: Public Art Explorer")}render()});
 }
 
 function drawChips(){
@@ -495,9 +661,9 @@ function drawPanel(){
     const next=critters().find(c=>!got(c.id));
     p.innerHTML=`<div class="eyebrow">Your trail</div><h2>${n} of ${t} critters found</h2>
       <div class="progress" aria-hidden="true"><i style="width:${n/t*100}%"></i></div>
-      <p class="sub">Tap a <b>?</b> zone on the map to read its clue. When you find the mural, scan its QR code or tap the chip to collect the sticker.</p>
+      <p class="sub">Tap a <b>?</b> zone on the map to read its clue. When you find the mural, scan its QR code or tap the chip to collect the sticker and unlock the host's perk.</p>
       ${next?`<div class="clue"><div class="eyebrow" style="margin-bottom:4px">Next clue</div>${esc(next.clue)}</div><button class="btn" type="button" id="goNext">Show this zone</button>`:`<div class="clue">You found every critter. Your giveaway entries are in.</div>`}
-      <p class="hint">Demo tip: open the Admin tab to see QR links, or reset progress.</p>`;
+      <p class="hint">Demo tip: the Impact tab lists plaque codes and lets you reset progress.</p>`;
     const gb=document.getElementById("goNext"); if(gb)gb.onclick=()=>{selected=next.id;render()};
     return;
   }
@@ -508,11 +674,14 @@ function drawPanel(){
     return;
   }
   const c=byId(selected); if(!c){selected=null;return drawPanel()}
+  const b=c.biz?biz(c.biz):null;
   if(got(c.id)){
-    p.innerHTML=`<div style="width:140px;margin:0 auto">${sticker(c,false)}</div><div><div class="eyebrow">Collected ${fmt(S.collected[c.id])}</div><h2>${esc(c.name)} the ${esc(c.species.toLowerCase())}</h2></div>
-    <dl class="facts"><div><dt>Host</dt><dd>${esc(c.host)}</dd></div><div><dt>Access</dt><dd>${esc(c.access)}</dd></div></dl>
-    <div class="btns"><button class="btn" type="button" id="prof">View profile</button><button class="btn alt" type="button" id="back">Back</button></div>`;
+    p.innerHTML=`<div style="width:130px;margin:0 auto">${sticker(c,false)}</div><div><div class="eyebrow">Collected ${fmt(S.collected[c.id])}</div><h2>${esc(c.name)} the ${esc(c.species.toLowerCase())}</h2></div>
+    ${b?`<button type="button" class="perkc" id="hostBtn"><span class="logo" style="color:${b.color}">${esc(b.name[0])}</span><span><b>${esc(b.name)}</b><small>${esc(b.perk)} · tap to view</small></span></button>`:""}
+    <dl class="facts"><div><dt>Access</dt><dd>${esc(c.access)}</dd></div></dl>
+    <div class="btns"><button class="btn" type="button" id="prof">View critter</button><button class="btn alt" type="button" id="back">Back</button></div>`;
     document.getElementById("prof").onclick=()=>openProfile(c.id);
+    const hb=document.getElementById("hostBtn");if(hb)hb.onclick=()=>openBiz(b.id);
     document.getElementById("back").onclick=()=>{selected=null;render()};
     return;
   }
@@ -525,8 +694,11 @@ function drawPanel(){
     const cn=document.getElementById("cancelNFC");if(cn)cn.onclick=()=>{stopNFC();panelMode="info";drawPanel()};
     return;
   }
+  const used=!!S.hintsUsed[c.id];
   p.innerHTML=`<div class="eyebrow">Hidden critter</div><h2>Somewhere in this zone…</h2>
     <div class="clue">${esc(c.clue)}</div>
+    ${used?`<div class="clue extra"><div class="eyebrow" style="margin-bottom:4px">Extra hint</div>${esc(c.hint2||"No extra hint for this critter yet.")}</div>`:`<button class="btn alt sm" type="button" id="moreHint">Need another hint?</button>`}
+    ${b?`<p class="hint">Find this critter to unlock: <b style="color:var(--brand)">${esc(b.perk)}</b> at ${esc(b.name)}.</p>`:""}
     <dl class="facts"><div><dt>Access</dt><dd>${esc(c.access)}</dd></div></dl>
     <div class="btns"><button class="btn" type="button" id="scanQR">Scan QR code</button><button class="btn alt" type="button" id="tapNFC">Tap NFC chip</button></div>
     <div><label for="manualCode" class="eyebrow" style="display:block;margin-bottom:6px">Can't scan? Enter the plaque code</label>
@@ -534,6 +706,7 @@ function drawPanel(){
     ${manualErr?`<p class="err" role="alert">${esc(manualErr)}</p>`:""}
     <p class="hint" id="manualHint">Demo code for this critter: <span class="mono">${c.code}</span></p></div>
     <button class="btn alt sm" type="button" id="back">Back to trail</button>`;
+  const mh=document.getElementById("moreHint");if(mh)mh.onclick=()=>{S.hintsUsed[c.id]=true;save();drawPanel()};
   document.getElementById("scanQR").onclick=()=>simulate(c.id,"scanning");
   document.getElementById("tapNFC").onclick=()=>readChip(c.id);
   document.getElementById("back").onclick=()=>{selected=null;manualErr="";render()};
@@ -569,23 +742,84 @@ function unlock(id,via){
   const before=badges().filter(b=>b.on).map(b=>b.id);
   const beforeEntries=entries();
   S.collected[id]=today();save();
-  const c=byId(id);
-  const newB=badges().filter(b=>b.on&&!before.includes(b.id));
+  const c=byId(id);const b=c.biz?biz(c.biz):null;
+  const newB=badges().filter(x=>x.on&&!before.includes(x.id));
   const addE=entries()-beforeEntries;
   render();
   modal(`<button class="x" type="button" aria-label="Close" data-close>×</button><div class="celebrate" style="display:grid;gap:12px">
     <div class="eyebrow">${via==="chip"?"Chip tapped ✓":"Location verified ✓"}</div>
-    <div class="pop" style="width:180px;margin:0 auto">${sticker(c,false)}</div>
+    <div class="pop" style="width:170px;margin:0 auto">${sticker(c,false)}</div>
     <h2>You found ${esc(c.name)}!</h2>
     <p class="sub" style="color:var(--muted)">${esc(c.species)} · added to your passport on ${fmt(S.collected[id])}</p>
-    ${newB.map(b=>`<div class="newbadge">New badge: ${esc(b.name)}</div>`).join("")}
-    ${addE>0?`<div class="newbadge">+${addE} iPad mini giveaway ${addE>1?"entries":"entry"}</div>`:""}
-    ${c.perk?`<div class="perk"><span class="eyebrow">Nearby perk · sample</span><b>${esc(c.perk)}</b><small>Show this screen at ${esc(c.host)} today.</small></div>`:""}
+    ${newB.map(x=>`<div class="newbadge">New badge: ${esc(x.name)}</div>`).join("")}
+    ${addE>0?`<div class="newbadge">+${addE} giveaway ${addE>1?"entries":"entry"}</div>`:""}
+    ${b?`<div class="boxw perk" style="text-align:left"><span class="eyebrow">Perk unlocked at ${esc(b.name)}</span><b>${esc(b.perk)}</b><small class="hint">Saved to your passport. Show it at the counter.</small></div>`:""}
     <p>${count()} of ${critters().length} found.</p>
-    <div class="btns"><button class="btn" type="button" id="seeProf">Meet ${esc(c.name)}</button><button class="btn alt" type="button" id="seePass">Open passport</button></div>
+    <div class="btns"><button class="btn" type="button" id="seeProf">Meet ${esc(c.name)}</button>${b?`<button class="btn alt" type="button" id="seeBiz">Visit ${esc(b.name.split(" ")[0])}…</button>`:`<button class="btn alt" type="button" id="seePass">Open passport</button>`}</div>
   </div>`);
   document.getElementById("seeProf").onclick=()=>openProfile(id);
-  document.getElementById("seePass").onclick=()=>{closeModal();show("passport")};
+  const sb=document.getElementById("seeBiz");if(sb)sb.onclick=()=>openBiz(b.id);
+  const sp=document.getElementById("seePass");if(sp)sp.onclick=()=>{closeModal();show("passport")};
+}
+
+/* business profile */
+function evDate(d){const x=new Date(d+"T12:00:00");return {day:x.getDate(),mon:x.toLocaleDateString("en-CA",{month:"short"}),wd:x.toLocaleDateString("en-CA",{weekday:"short"})}}
+function fmtTime(t){const [h,m]=t.split(":").map(Number);return (h%12||12)+(m?":"+String(m).padStart(2,"0"):"")+(h<12?"am":"pm")}
+function openBiz(id){
+  const b=biz(id);if(!b)return;
+  const c=byId(b.critter);const unlocked=perkUnlocked(b);const used=S.used[b.id];const stamped=S.stamps[b.id];
+  modal(`<button class="x" type="button" aria-label="Close" data-close>×</button>${bizCover(b,true)}
+  <div class="mb">
+    <div><span class="eyebrow">${esc(b.cat)}</span><h2 style="margin-top:4px">${esc(b.name)}</h2>
+    <div class="meta" style="margin-top:6px"><span>${esc(b.addr)}</span>${b.phone?`<span>· ${esc(b.phone)}</span>`:""}</div></div>
+    <p>${esc(b.about)}</p>
+    <div class="boxw perk"><span class="eyebrow">Trail perk · example</span><b>${esc(b.perk)}</b>
+      ${unlocked?(used?`<small class="hint">Used ${fmt(used)}. Thanks for shopping local!</small>`:`<button class="btn sm" type="button" id="usePerk">Show at counter</button>`):`<small class="hint">${esc(unlockHow(b))}.</small>${c?`<button class="btn alt sm" type="button" id="findIt">Show the clue</button>`:""}`}
+    </div>
+    <div class="boxw bonus"><span class="eyebrow">In-store bonus · example</span><div>${esc(b.bonus.clue)}</div><small class="hint">Reward: ${esc(b.bonus.reward)} · each bonus stamp is +1 giveaway entry</small>
+      ${stamped?`<p class="ok">Bonus stamp collected ${fmt(stamped)} ✓</p>`:`<form class="manual" id="stampForm"><input class="codein" id="stampCode" maxlength="10" autocomplete="off" placeholder="Code from staff"><button class="btn sm" type="submit">Collect</button></form><p class="err" id="stampErr" role="alert" hidden></p><p class="hint">Demo code: <span class="mono">${esc(b.bonus.code)}</span></p>`}
+    </div>
+    ${b.events.length?`<div class="boxw"><span class="eyebrow">Events · examples</span>${b.events.map(e=>{const d=evDate(e.d);return `<div class="evrow"><span class="d">${d.wd} ${d.mon} ${d.day}</span><span><b>${esc(e.title)}</b> · ${fmtTime(e.t)}<br><small class="hint">${esc(e.note)}</small></span></div>`}).join("")}</div>`:""}
+    <div class="btns"><button class="btn alt" type="button" id="bizMap">Show on map</button><a class="btn alt" href="${mapsLink(b)}" target="_blank" rel="noopener" style="text-decoration:none">Directions</a></div>
+    <p class="hint">${esc(BIZ_NOTE)}</p>
+  </div>`,true);
+  const up=document.getElementById("usePerk");if(up)up.onclick=()=>redeem(b.id);
+  const fi=document.getElementById("findIt");if(fi)fi.onclick=()=>{closeModal();selected=b.critter;panelMode="info";show("map")};
+  document.getElementById("bizMap").onclick=()=>{closeModal();S.layers.biz=true;save();show("map")};
+  const sf=document.getElementById("stampForm");
+  if(sf)sf.onsubmit=e=>{e.preventDefault();const v=document.getElementById("stampCode").value.trim().toUpperCase();
+    if(v===b.bonus.code){const before=badges().filter(x=>x.on).map(x=>x.id);S.stamps[b.id]=today();save();render();openBiz(b.id);toast("Bonus stamp collected! +1 giveaway entry");const nb=badges().find(x=>x.on&&!before.includes(x.id));if(nb)setTimeout(()=>toast("Badge earned: "+nb.name),2700)}
+    else{const er=document.getElementById("stampErr");er.hidden=false;er.textContent="That code didn't work. Ask a staff member for the trail code."}};
+}
+function redeem(id){
+  const b=biz(id);
+  const code=(b.id.slice(0,3)+"-"+String(318+S.name.length*7)).toUpperCase();
+  modal(`<button class="x" type="button" aria-label="Close" data-close>×</button><div class="redeem">
+    <div class="eyebrow">Show this to staff</div><h2>${esc(b.perk)}</h2><p class="hint">${esc(b.name)} · ${esc(S.name)}</p>
+    <div class="code">${esc(code)}</div>
+    <p class="hint">Staff tap "Mark as used" once the perk is applied. One use per passport.</p>
+    <button class="btn" type="button" id="markUsed">Mark as used</button><button class="btn alt" type="button" id="notYet">Not yet</button></div>`);
+  document.getElementById("markUsed").onclick=()=>{S.used[b.id]=today();save();render();closeModal();toast("Perk used. Thanks for shopping local!")};
+  document.getElementById("notYet").onclick=closeModal;
+}
+
+function bizCard(b){
+  const unlocked=perkUnlocked(b);
+  return `<button type="button" class="bcard card" data-biz="${b.id}">${bizCover(b)}<div class="bb"><div class="row" style="justify-content:space-between"><span class="eyebrow">${esc(b.cat)}</span>${b.critter?`<span class="sample">Critter host</span>`:""}</div><h4>${esc(b.name)}</h4><div class="meta"><span>${esc(b.addr)}</span></div><div class="tagrow"><span class="tag perk">${unlocked?"Perk unlocked":"Perk to unlock"}</span>${b.events.length?`<span class="tag evt">${b.events.length} event${b.events.length>1?"s":""}</span>`:""}${S.stamps[b.id]?`<span class="tag bonus">Stamp ✓</span>`:`<span class="tag bonus">Bonus clue</span>`}</div></div></button>`;
+}
+function allEvents(){return BUSINESSES.flatMap(b=>b.events.map(e=>Object.assign({b},e))).sort((a,b)=>a.d.localeCompare(b.d))}
+function evCard(e){const d=evDate(e.d);return `<button type="button" class="ev card" data-biz="${e.b.id}"><div class="date"><div><b>${d.day}</b><span>${d.mon}</span></div></div><div><h4>${esc(e.title)}</h4><p>${esc(e.b.name)} · ${d.wd} ${fmtTime(e.t)}</p><p>${esc(e.note)} · <i>example</i></p></div></button>`}
+function drawLocal(){
+  document.getElementById("bizNote").textContent=BIZ_NOTE;
+  document.getElementById("eventRail").innerHTML=allEvents().map(evCard).join("");
+  document.getElementById("bizRail").innerHTML=BUSINESSES.map(bizCard).join("");
+  const groups=[["all","All"],["food","Food & drink"],["shop","Shops"],["fun","Things to do"],["perk","Perk unlocked"]];
+  document.getElementById("bizFilters").innerHTML=groups.map(g=>`<button type="button" class="chip" aria-pressed="${bizFilter===g[0]}" data-f="${g[0]}">${g[1]}</button>`).join("");
+  document.querySelectorAll("#bizFilters [data-f]").forEach(x=>x.onclick=()=>{bizFilter=x.dataset.f;drawLocal()});
+  const list=BUSINESSES.filter(b=>bizFilter==="all"||(bizFilter==="perk"?perkUnlocked(b):b.group===bizFilter));
+  document.getElementById("bizList").innerHTML=list.length?list.map(bizCard).join(""):`<p class="hint">Nothing here yet. Find more critters to unlock perks.</p>`;
+  document.getElementById("eventList").innerHTML=allEvents().map(evCard).join("");
+  document.querySelectorAll("#eventRail [data-biz],#bizRail [data-biz],#bizList [data-biz],#eventList [data-biz]").forEach(x=>x.onclick=()=>openBiz(x.dataset.biz));
 }
 
 function drawPassport(){
@@ -598,19 +832,21 @@ function drawPassport(){
   document.getElementById("ppHint").textContent=n<t?`${t-n} still hiding`:"Complete!";
   document.getElementById("stickerGrid").innerHTML=critters().map(c=>{const h=got(c.id);return `<button type="button" class="slot ${h?"got":""}" data-prof="${c.id}">${sticker(c,!h)}<b>${h?esc(c.name):"Mystery critter"}</b>${h?`<span class="stamp">${fmt(S.collected[c.id]).replace(/, \d{4}/,"")}</span>`:`<span class="lockedtxt">Not found yet</span>`}</button>`}).join("");
   document.querySelectorAll("#stickerGrid [data-prof]").forEach(b=>b.onclick=()=>openProfile(b.dataset.prof));
+  document.getElementById("wallet").innerHTML=BUSINESSES.map(b=>{const u=perkUnlocked(b),used=S.used[b.id];return `<button type="button" class="perkc ${u?"":"locked"} ${used?"used":""}" data-biz="${b.id}"><span class="logo" style="color:${b.color}">${esc(b.name[0])}</span><span><b>${esc(b.perk)}</b><small>${esc(b.name)} · ${used?"Used "+fmt(used):u?"Ready to use":esc(unlockHow(b))}</small></span></button>`}).join("");
+  document.querySelectorAll("#wallet [data-biz]").forEach(x=>x.onclick=()=>openBiz(x.dataset.biz));
   document.getElementById("badgeList").innerHTML=badges().map(b=>`<div class="badge ${b.on?"on":"off"}"><div class="medal">${b.m}</div><div><b>${esc(b.name)}</b><small>${b.on?"Earned":esc(b.desc)}</small></div></div>`).join("");
   const e=entries();
-  document.getElementById("giveaway").innerHTML=`<div><div class="eyebrow">Launch giveaway · proposed with the North Shore BIA</div><h3 style="font-size:1.2rem;margin:4px 0">iPad mini prize draw</h3><p class="hint">Collect 5 critters for 1 milestone entry. Complete the trail for 3 more.</p>
+  document.getElementById("giveaway").innerHTML=`<div><div class="eyebrow">Launch giveaway · proposed with the North Shore BIA</div><h3 style="font-size:1.2rem;margin:4px 0">iPad mini prize draw</h3><p class="hint">5 critters = 1 entry. Finish the trail for 3 more. Each bonus stamp from a local spot adds 1.</p>
     <div class="progress" style="margin-top:10px" aria-hidden="true"><i style="width:${Math.min(n/t,1)*100}%"></i></div></div>
     <div class="big">${e}<small>${e===1?"entry":"entries"}</small></div>`;
 }
 
 function drawDir(){
-  document.getElementById("dirList").innerHTML=critters().map(c=>{const h=got(c.id);return `<button type="button" class="ccard" data-prof="${c.id}">${sticker(c,!h)}<div><h3>${h?esc(c.name):"???"}</h3><p>${h?esc(c.species):"Find this critter to reveal it"}</p><p>${esc(c.host)}</p><span class="pill ${h?"got":"no"}">${h?"Collected":"Locked"}</span></div></button>`}).join("");
+  document.getElementById("dirList").innerHTML=critters().map(c=>{const h=got(c.id);return `<button type="button" class="ccard card" data-prof="${c.id}">${sticker(c,!h)}<div><h3>${h?esc(c.name):"???"}</h3><p>${h?esc(c.species):"Find this critter to reveal it"}</p><p>${esc(c.host)}</p><span class="pill ${h?"got":"no"}">${h?"Collected":"Locked"}</span></div></button>`}).join("");
   document.querySelectorAll("#dirList [data-prof]").forEach(b=>b.onclick=()=>openProfile(b.dataset.prof));
 }
 function openProfile(id){
-  const c=byId(id),h=got(id);
+  const c=byId(id),h=got(id);const b=c.biz?biz(c.biz):null;
   if(!h){
     modal(`<button class="x" type="button" aria-label="Close" data-close>×</button><div style="width:150px;margin:0 auto">${sticker(c,true)}</div><div><div class="eyebrow">Mystery critter</div><h2>Still hiding</h2></div><div class="clue">${esc(c.clue)}</div><p class="hint">Hosted at ${esc(c.host)}. Find the mural to unlock its story, artist and fun facts.</p><button class="btn" type="button" id="toMap">Show on map</button>`);
     document.getElementById("toMap").onclick=()=>{closeModal();selected=id;panelMode="info";show("map")};
@@ -619,16 +855,18 @@ function openProfile(id){
   modal(`<button class="x" type="button" aria-label="Close" data-close>×</button>${sticker(c,false)}
     <div><div class="eyebrow">${esc(c.species)}</div><h2>${esc(c.name)}</h2></div>
     <p>${esc(c.story||"Story coming soon.")}</p>
-    <dl class="facts"><div><dt>Artist</dt><dd>${esc(c.artist)}</dd></div><div><dt>Hosted by</dt><dd>${esc(c.host)}</dd></div><div><dt>Found</dt><dd>${fmt(S.collected[id])}</dd></div><div><dt>Access</dt><dd>${esc(c.access||"Details coming soon")}</dd></div><div><dt>Sponsor</dt><dd>Sponsor slot (available)</dd></div></dl>
+    <dl class="facts"><div><dt>Artist</dt><dd>${esc(c.artist)}</dd></div><div><dt>Hosted by</dt><dd>${esc(c.host)}</dd></div><div><dt>Found</dt><dd>${fmt(S.collected[id])}</dd></div><div><dt>Access</dt><dd>${esc(c.access||"Details coming soon")}</dd></div></dl>
     ${c.fact?`<div class="clue"><div class="eyebrow" style="margin-bottom:4px">Fun fact</div>${esc(c.fact)}</div>`:""}
+    ${b?`<button type="button" class="perkc" id="hostBtn"><span class="logo" style="color:${b.color}">${esc(b.name[0])}</span><span><b>Visit ${esc(b.name)}</b><small>${esc(b.perk)}</small></span></button>`:""}
     ${c.nearby?`<p><b>Explore nearby:</b> ${esc(c.nearby)}</p>`:""}
     <div id="reportBox"><button class="btn alt sm" type="button" id="reportBtn">Report graffiti or damage</button></div>`);
+  const hb=document.getElementById("hostBtn");if(hb)hb.onclick=()=>openBiz(b.id);
   document.getElementById("reportBtn").onclick=()=>{document.getElementById("reportBox").innerHTML=`<p class="ok" role="status">Thanks. Your report and the mural's location went to the clean team. (Demo: nothing was sent.)</p>`};
 }
 
 function drawAdmin(){
   const list=critters();const total=list.reduce((a,c)=>a+(c.scans||0),0);const max=Math.max(...list.map(c=>c.scans||0),1);
-  document.getElementById("stats").innerHTML=[["318","Explorers signed up"],[total.toLocaleString("en-CA"),"Visits to host businesses"],[list.reduce((a,c)=>a+(c.redeemed||0),0).toLocaleString("en-CA"),"Business perks used"],["4.6","Stops per outing"],["34%","From outside Kamloops"],["3","Graffiti reports on murals"]].map(s=>`<div class="stat"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("");
+  document.getElementById("stats").innerHTML=[["318","Explorers signed up"],[total.toLocaleString("en-CA"),"Visits to host businesses"],[list.reduce((a,c)=>a+(c.redeemed||0),0).toLocaleString("en-CA"),"Business perks used"],["4.6","Stops per outing"],["34%","From outside Kamloops"],["3","Graffiti reports on murals"]].map(s=>`<div class="stat card"><b>${s[0]}</b><span>${s[1]}</span></div>`).join("");
   document.getElementById("adminRows").innerHTML=list.map(c=>`<tr><td><div class="row"><div style="width:36px">${sticker(c,false)}</div><b>${esc(c.name)}</b></div></td><td>${esc(c.host)}</td><td class="num">${(c.scans||0).toLocaleString("en-CA")}</td><td class="num">${(c.redeemed||0).toLocaleString("en-CA")}</td><td><div class="bar"><i style="width:${(c.scans||0)/max*100}%"></i></div></td><td class="mono">#${esc(c.id)} · ${esc(c.code)}</td></tr>`).join("");
 }
 document.getElementById("addForm").addEventListener("submit",e=>{
@@ -640,8 +878,8 @@ document.getElementById("addForm").addEventListener("submit",e=>{
   const spots=[[150,300],[540,330],[760,480],[280,390],[700,200],[200,420]];
   const sp2=spots[S.extra.length%spots.length];
   const code=(name.replace(/[^A-Za-z]/g,"").toUpperCase()+"XXX").slice(0,3)+((S.extra.length+1)%10);
-  S.extra.push({id,name,species:sp,host,bg:document.getElementById("aColor").value,x:sp2[0],y:sp2[1],code,artist:"Artist (TBD)",scans:0,
-    clue:`${name} just moved in. Look near ${host}.`,story:"",fact:"",nearby:"",access:"Access details to be added"});
+  S.extra.push({id,name,species:sp,host,biz:null,bg:document.getElementById("aColor").value,x:sp2[0],y:sp2[1],code,artist:"Local artist (to be selected)",scans:0,
+    clue:`${name} just moved in. Look near ${host}.`,hint2:`Ask the staff at ${host}.`,story:"",fact:"",nearby:"",access:"Access details to be added"});
   save();e.target.reset();
   const m=document.getElementById("addMsg");m.hidden=false;m.textContent=`${name} added. Plaque code: ${code}`;
   render();
@@ -650,7 +888,7 @@ document.getElementById("resetBtn").onclick=()=>{S=clone(SEED);save();selected=n
 
 document.getElementById("profileBtn").onclick=()=>{
   modal(`<button class="x" type="button" aria-label="Close" data-close>×</button><div><div class="eyebrow">Free account</div><h2>Get your passport</h2></div>
-  <p class="hint">Create a profile to save your stickers, earn badges and enter the launch giveaway.</p>
+  <p class="hint">Create a profile to save your stickers and perks, earn badges and enter the launch giveaway.</p>
   <form class="signup" id="signup">
     <label for="suName">Explorer name<input id="suName" required maxlength="28" placeholder="e.g. The Patel Family"></label>
     <label for="suEmail">Email<input id="suEmail" type="email" required placeholder="you@example.com"></label>
@@ -658,19 +896,19 @@ document.getElementById("profileBtn").onclick=()=>{
     <button class="btn" type="submit">Create profile</button>
     <p class="hint">Demo only. Nothing is sent anywhere.</p>
   </form>`);
-  document.getElementById("signup").onsubmit=e=>{e.preventDefault();S.name=document.getElementById("suName").value.trim()||"Explorer";S.issued=today();if(document.getElementById("suFresh").checked){S.collected={};S.artSeen=[]}save();closeModal();selected=null;render();show("passport");toast("Passport created. Welcome, "+S.name+"!")};
+  document.getElementById("signup").onsubmit=e=>{e.preventDefault();S.name=document.getElementById("suName").value.trim()||"Explorer";S.issued=today();if(document.getElementById("suFresh").checked){S.collected={};S.artSeen=[];S.hintsUsed={};S.used={};S.stamps={}}save();closeModal();selected=null;render();show("passport");toast("Passport created. Welcome, "+S.name+"!")};
 };
 
 const scrim=document.getElementById("scrim"),md=document.getElementById("modal");let lastFocus=null;
-function modal(html){lastFocus=document.activeElement;md.innerHTML=html;scrim.hidden=false;md.querySelectorAll("[data-close]").forEach(b=>b.onclick=closeModal);const f=md.querySelector("button,input");if(f)f.focus()}
-function closeModal(){scrim.hidden=true;md.innerHTML="";if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}}
+function modal(html,flush){md.classList.toggle("flush",!!flush);if(scrim.hidden)lastFocus=document.activeElement;md.innerHTML=html;scrim.hidden=false;md.scrollTop=0;md.querySelectorAll("[data-close]").forEach(b=>b.onclick=closeModal);const f=md.querySelector("button,input");if(f)f.focus()}
+function closeModal(){scrim.hidden=true;md.innerHTML="";md.classList.remove("flush");if(lastFocus&&lastFocus.focus)try{lastFocus.focus()}catch(e){}}
 scrim.addEventListener("click",e=>{if(e.target===scrim)closeModal()});
 document.addEventListener("keydown",e=>{if(e.key==="Escape"&&!scrim.hidden)closeModal()});
-function toast(t){const d=document.createElement("div");d.textContent=t;d.setAttribute("role","status");d.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:10px 16px;border-radius:12px;z-index:60;font-weight:700;font-size:.9rem;max-width:calc(100% - 32px)";document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
+function toast(t){const d=document.createElement("div");d.textContent=t;d.setAttribute("role","status");d.style.cssText="position:fixed;left:50%;transform:translateX(-50%);bottom:calc(84px + env(safe-area-inset-bottom,0px));background:var(--ink);color:#fff;padding:10px 16px;border-radius:12px;z-index:60;font-weight:600;font-size:.9rem;max-width:calc(100% - 32px);box-shadow:0 8px 24px rgba(0,0,0,.2)";document.body.appendChild(d);setTimeout(()=>d.remove(),2600)}
 
 function render(){
   document.getElementById("userName").textContent=S.name;
-  drawChips();drawMap();drawPanel();drawPassport();drawDir();drawAdmin();
+  drawHero();drawChips();drawMap();drawPanel();drawLocal();drawPassport();drawDir();drawAdmin();
 }
 document.getElementById("logoArt").innerHTML=ART.turtle;
 document.getElementById("avatarArt").innerHTML=ART.owl;
